@@ -33,7 +33,7 @@ export default async function Porfolio() {
       <section className="section sec2 about" id="about">
         <div className="main-title">
           <h2>
-            My<span>Portfolio</span>
+            My<span>Skills & Experience</span>
             <span className="bg-text">stats</span>
           </h2>
         </div>

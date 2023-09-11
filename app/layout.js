@@ -10,6 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://mohamedibrahim13.vercel.app"),
   generator: "mohamedibrahim",
   applicationName: "mohamedibrahim",
   keywords: [
@@ -42,7 +43,7 @@ export const metadata = {
   },
   creator: "Mohamed Ibrahim Mohamed Yossef",
   publisher: "Mohamed Ibrahim Mohamed Yossef",
-  manifest: "https://mohamedibrahim13.vercel.app/manifest.json",
+  manifest: "/manifest.json",
   viewport: {
     width: "device-width",
     initialScale: 1,

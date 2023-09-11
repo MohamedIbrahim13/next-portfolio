@@ -40,7 +40,7 @@ export default async function Home() {
         </div>
         <div className="right-header">
           <h1 className="name">
-            Hi, I'm <span>{info?.main.firstname}. </span>A{" "}
+            Hi, I&lsquo;m <span>{info?.main.firstname}. </span>A{" "}
             {info?.main.jobdescription}.
           </h1>
           <p>

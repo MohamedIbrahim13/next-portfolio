@@ -33,12 +33,12 @@ export default async function Projects() {
       <section className="section sec3" id="portfolio">
         <div className="main-title">
           <h2>
-            My <span>Web Apps</span>
+            My <span>Web Projects</span>
             <span className="bg-text">My Work</span>
           </h2>
         </div>
         <p className="port-text">
-          Here is some of my work that I've done for educating myself.
+          Here is some of my work that I&lsquo;ve done for educating myself.
         </p>
         <Suspense
           fallback={<p style={{ textAlign: "center" }}>Loading apps...</p>}
