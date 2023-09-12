@@ -31,7 +31,7 @@ export const metadata = {
   authors: [
     {
       name: "Mohamed Ibrahim Mohamed Yossef",
-      url: "https://mohamedibrahim13.vercel.app/",
+      url: "/",
     },
   ],
   twitter: {
@@ -47,7 +47,6 @@ export const metadata = {
   viewport: {
     width: "device-width",
     initialScale: 1,
-    maximumScale: 1,
   },
   appleWebApp: {
     statusBarStyle: "#0A36AF",
@@ -61,6 +60,9 @@ export const metadata = {
   icons: {
     icon: "/icon.png",
     apple: "/apple-touch-icon.png",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 export default function Form({ main, resume }) {
   const [name, setName] = useState("");
@@ -97,14 +98,14 @@ export default function Form({ main, resume }) {
                 <div className="contact-icon">
                   {main.social?.map(item => {
                     return (
-                      <a
-                        href={item.url}
+                      <Link
+                        href={`${item.url}`}
                         target="_blank"
                         key={item.name}
                         rel="noreferrer"
                       >
                         <i className={item.className}></i>
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>

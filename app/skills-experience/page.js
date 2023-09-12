@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Skills from "../components/Skills";
+import { getData } from "@/lib/utils";
 
 export const metadata = {
   title: "mohamedibrahim | Skills & Experience",
@@ -11,20 +12,6 @@ export const metadata = {
       "This page shows the educational background, the skills, the certificates, the experience in the field of web development, and building a clean code.",
   },
 };
-
-async function getData() {
-  const res = await fetch("https://api.npoint.io/2e8b874cb210e4d800bc", {
-    next: {
-      revalidate: 60,
-    },
-  });
-
-  if (!res.ok) {
-    notFound();
-  }
-
-  return res.json();
-}
 
 export default async function Porfolio() {
   const { resume } = await getData();

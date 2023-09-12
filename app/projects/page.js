@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import ProjectList from "../components/ProjectList";
+import { getData } from "@/lib/utils";
 
 export const metadata = {
   title: "mohamedibrahim | Projects",
@@ -11,20 +12,6 @@ export const metadata = {
       "This page shows the different apps which made with different skills & efforts ant time dedicated to frontend development and good knowledge of backend develpment.",
   },
 };
-
-async function getData() {
-  const res = await fetch("https://api.npoint.io/2e8b874cb210e4d800bc", {
-    next: {
-      revalidate: 60,
-    },
-  });
-
-  if (!res.ok) {
-    notFound();
-  }
-
-  return res.json();
-}
 
 export default async function Projects() {
   const { portfolio } = await getData();

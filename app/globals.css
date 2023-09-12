@@ -24,6 +24,18 @@
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
+html {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+body{
+  -ms-overflow-style: none;
+}
+
 .light-mode {
   --color-primary: #ffffff;
   --color-secondary: #feb59c;

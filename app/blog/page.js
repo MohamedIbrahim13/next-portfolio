@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Articles from "../components/Articles";
 import Jobs from "../components/Jobs";
+import { getArticles, getJobs } from "@/lib/utils";
 
 export const metadata = {
   title: "mohamedibrahim | Blog",
@@ -13,43 +14,9 @@ export const metadata = {
   },
 };
 
-async function getArticles() {
-  const res = await fetch(
-    "https://dev.to/api/articles?tag=react&top=130&state=rising&per_page=6",
-    {
-      next: {
-        revalidate: 3600,
-      },
-    }
-  );
-
-  if (!res.ok) {
-    notFound();
-  }
-
-  return res.json();
-}
-
-async function getJobs() {
-  const res = await fetch(
-    "https://remotive.io/api/remote-jobs?category=software-dev&limit=7",
-    {
-      next: {
-        revalidate: 60,
-      },
-    }
-  );
-
-  if (!res.ok) {
-    notFound();
-  }
-
-  return res.json();
-}
-
 export default async function Blog() {
   const [jobs, articles] = await Promise.all([getJobs(), getArticles()]);
-  //console.log(jobs, articles);
+  //console.log(articles);
   return (
     <main>
       <section className="section sec4 " id="blogs">

@@ -22,14 +22,14 @@ export default function ProjectList({ portfolio }) {
                 <Link href={`${project.github}`} className="icon">
                   <i className="fab fa-github"></i>
                 </Link>
-                <a
-                  href={project.url}
+                <Link
+                  href={`${project.url}`}
                   target="_blank"
                   className="icon"
                   rel="noreferrer"
                 >
                   <i className="fas fa-globe"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

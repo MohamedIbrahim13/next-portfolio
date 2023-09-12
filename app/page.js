@@ -1,5 +1,7 @@
 import Image from "next/image";
 import ProfilePic from "../public/assets/profile.jpg";
+import { getData } from "@/lib/utils";
+import Link from "next/link";
 
 export const metadata = {
   title: "mohamedibrahim",
@@ -12,22 +14,8 @@ export const metadata = {
   },
 };
 
-async function getData() {
-  const res = await fetch("https://api.npoint.io/2e8b874cb210e4d800bc", {
-    next: {
-      revalidate: 60,
-    },
-  });
-
-  if (!res.ok) {
-    notFound();
-  }
-
-  return res.json();
-}
-
 export default async function Home() {
-  const info = await getData();
+  const { main } = await getData();
   //console.log(info.profilepic);
   return (
     <header className="section sec1 header active" id="home">
@@ -40,24 +28,24 @@ export default async function Home() {
         </div>
         <div className="right-header">
           <h1 className="name">
-            Hi, I&lsquo;m <span>{info?.main.firstname}. </span>A{" "}
-            {info?.main.jobdescription}.
+            Hi, I&lsquo;m <span>{main.firstname}. </span>A {main.jobdescription}
+            .
           </h1>
           <p>
             I have a passion for Web Development, I love to create beautiful and
             functional websites.
           </p>
           <div className="btn-con">
-            <a
-              href={info?.main.pdfversion}
-              download={info?.main.pdfversion}
+            <Link
+              href={`${main.pdfversion}`}
+              download={`${main.pdfversion}`}
               className="main-btn"
             >
               <span className="btn-text">Download CV</span>
               <span className="btn-icon">
                 <i className="fas fa-download"></i>
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

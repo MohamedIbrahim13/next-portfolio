@@ -27,7 +27,12 @@ export default function Skills({ skills }) {
             <p className="prog-title">{framework.name}</p>
             <p>
               {" "}
-              <img src={framework.icon} alt={framework.name} />
+              <Image
+                src={framework.icon}
+                alt={framework.name}
+                width="24"
+                height="24"
+              />
             </p>
             <div className="progress-con">
               <p className="prog-text">75%</p>

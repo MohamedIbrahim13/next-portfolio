@@ -1,3 +1,4 @@
+import { getData } from "@/lib/utils";
 import Form from "../components/Form";
 
 export const metadata = {
@@ -10,20 +11,6 @@ export const metadata = {
       "If you are interested in hiring a full-stack web developer, don't hesitate and send me at once. The website is available 24/7.",
   },
 };
-
-async function getData() {
-  const res = await fetch("https://api.npoint.io/2e8b874cb210e4d800bc", {
-    next: {
-      revalidate: 60,
-    },
-  });
-
-  if (!res.ok) {
-    notFound();
-  }
-
-  return res.json();
-}
 
 export default async function Contact() {
   const { main, resume } = await getData();

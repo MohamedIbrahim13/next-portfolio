@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Jobs({ jobs }) {
   return (
     <div className="timeline">
@@ -13,9 +15,9 @@ export default function Jobs({ jobs }) {
               <span> - {job.company_name}</span>
             </h5>
             <h6>
-              <a href={job.url} target="_blank" rel="noreferrer">
+              <Link href={`${job.url}`} target="_blank" rel="noreferrer">
                 Apply Here
-              </a>
+              </Link>
             </h6>
           </div>
         );
